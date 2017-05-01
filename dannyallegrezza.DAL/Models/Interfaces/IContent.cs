@@ -13,5 +13,6 @@ namespace dannyallegrezza.DAL.Models
         DateTime CreatedDate { get; set; }
         DateTime ModifiedDate { get; set; }
         string Title { get; set; }
+        string SanitizedUrl(); 
     }
 }

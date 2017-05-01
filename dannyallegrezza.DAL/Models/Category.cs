@@ -1,20 +1,30 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
+using System.ComponentModel.DataAnnotations.Schema;
+using System.Text.RegularExpressions;
 
 namespace dannyallegrezza.DAL.Models
 {
-    /// <summary>
-    /// A blog post object
-    /// </summary>
-    public class Post : IContent
+    public class Category : IContent
     {
         #region Properties
-        public string Content { get; set; }
-        public string Excerpt { get; set; }
+        /// <summary>
+        /// Returns the properly formatted version of the item 
+        /// </summary>
+        [NotMapped]
+        public string Key
+        {
+            get
+            {
+                if (Title == null)
+                    return null;
+
+                var key = Regex.Replace(Title, @"[^a-zA-Z0-9\- ]", string.Empty);
+                return key.Replace(" ", "-").ToLower();
+            }
+        }
         #endregion Properties
 
-        #region IContent Members
+        #region #region IContent Members
         public int Id { get; set; }
         public string Title { get; set; }
         public string Author { get; set; }
@@ -33,10 +43,5 @@ namespace dannyallegrezza.DAL.Models
             return key.Replace(" ", "-").ToLower();
         }
         #endregion IContent Members
-
-        public Post()
-        {
-
-        }
     }
 }
