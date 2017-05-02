@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Text.RegularExpressions;
 
 namespace dannyallegrezza.DAL.Models
 {
@@ -12,6 +13,7 @@ namespace dannyallegrezza.DAL.Models
         #region Properties
         public string Content { get; set; }
         public string Excerpt { get; set; }
+        public Category Category { get; set; }
         #endregion Properties
 
         #region IContent Members
