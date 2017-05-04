@@ -8,7 +8,7 @@ namespace dannyallegrezza.DAL.Models
     /// </summary>
     public interface IContent
     {
-        string Author { get; set; }
+        Author Author { get; set; }
         int Id { get; set; }
         DateTime CreatedDate { get; set; }
         DateTime ModifiedDate { get; set; }
