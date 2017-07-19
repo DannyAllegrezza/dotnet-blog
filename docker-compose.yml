@@ -1,0 +1,8 @@
+version: '2'
+
+services:
+  dannyallegrezza.api:
+    image: dannyallegrezza.api
+    build:
+      context: ./dannyallegrezza.API
+      dockerfile: Dockerfile

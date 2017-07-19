@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using dannyallegrezza.DAL.Models;
 
 namespace dannyallegrezza.API.Controllers
 {
@@ -11,9 +12,18 @@ namespace dannyallegrezza.API.Controllers
     {
         // GET api/values
         [HttpGet]
-        public IEnumerable<string> Get()
+        public IEnumerable<Post> Get()
         {
-            return new string[] { "value1", "value2" };
+            yield return new Post()
+            {
+                Author = new Author() { FirstName = "Danny" },
+                Category = new Category(),
+                Id = 1,
+                Content = "hello world",
+                CreatedDate = DateTime.Now,
+                Excerpt = "hello",
+                Title = "My First Post"
+            };
         }
 
         // GET api/values/5
