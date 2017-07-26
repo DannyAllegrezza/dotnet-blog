@@ -4,12 +4,19 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using dannyallegrezza.DAL.Models;
+using dannyallegrezza.DAL;
 
 namespace dannyallegrezza.API.Controllers
 {
     [Route("api/[controller]")]
     public class ValuesController : Controller
     {
+        private BlogDbContext _context;
+
+        public ValuesController(BlogDbContext context)
+        {
+            _context = context; 
+        }
         // GET api/values
         [HttpGet]
         public IEnumerable<Post> Get()

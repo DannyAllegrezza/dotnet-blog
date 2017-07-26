@@ -5,6 +5,8 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using dannyallegrezza.DAL;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+using dannyallegrezza.DAL.Models;
 
 namespace dannyallegrezza.API
 {
@@ -28,6 +30,7 @@ namespace dannyallegrezza.API
             // Add framework services.
             services.AddDbContext<BlogDbContext>(options =>
                 options.UseNpgsql(Configuration.GetConnectionString("PostgresConnection")));
+
             services.AddMvc();
         }
 

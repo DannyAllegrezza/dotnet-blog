@@ -10,6 +10,8 @@ namespace dannyallegrezza.DAL.Models
     /// </summary>
     public class Tag : IContent
     {
+        public virtual ICollection<PostTag> PostTags { get; set; }
+
         #region IContent Members
         public int Id { get; set; }
         public string Title { get; set; }

@@ -2,10 +2,12 @@
 
 namespace dannyallegrezza.DAL.Models
 {
-    public class Author : IdentityUser
+    public class Author 
     {
+        public int Id { get; set; }
         public string FirstName { get; set; }
         public string LastName { get; set; }
+        public string ShortName { get; set; }
 
         private string _fullName;
 

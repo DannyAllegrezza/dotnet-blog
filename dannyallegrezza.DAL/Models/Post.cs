@@ -14,6 +14,7 @@ namespace dannyallegrezza.DAL.Models
         public string Content { get; set; }
         public string Excerpt { get; set; }
         public Category Category { get; set; }
+        public virtual ICollection<PostTag> PostTags { get; set; }
         #endregion Properties
 
         #region IContent Members
