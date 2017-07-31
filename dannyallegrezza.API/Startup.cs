@@ -31,6 +31,8 @@ namespace dannyallegrezza.API
             services.AddDbContext<BlogDbContext>(options =>
                 options.UseNpgsql(Configuration.GetConnectionString("PostgresConnection")));
 
+            services.AddTransient<BlogDbContext>();
+
             services.AddMvc();
         }
 
